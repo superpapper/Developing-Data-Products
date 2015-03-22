@@ -1,0 +1,27 @@
+Law of Large Number Simulation.md
+========================================================
+author: superpapper
+date: 03/21/2015
+
+Law of large Number
+========================================================
+
+In probability theory, the law of large numbers (LLN) is a theorem that describes the result of performing the same experiment a large number of times. In this project, we are trying to simulate the effect by plotting a sample of exponential
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+Slide With Code
+========================================================
+
+```{r}
+summary(cars)
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
