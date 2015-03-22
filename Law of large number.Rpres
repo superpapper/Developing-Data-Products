@@ -10,18 +10,27 @@ In probability theory, the law of large numbers (LLN) is a theorem that describe
 You are going to see in the App as the simulation size increases:
 - simulation mean approach theoratical mean
 - simulation variance approach theoratical variance
-- Distribution of sample mean approach normal distribution 
+- distribution of sample mean approach normal distribution 
 
 You could also see how the exponential distribution mean and variance changes as the lambda changes.
 
+The App
+========================================================
+
+!["app"](App.jpg) 
+You could change input through three slider on the left and 
+the exponential distribution's mean, varianceff and sample mean distribution will automatically refresh on the right.
+
 Simulation Code
 ========================================================
-following code in the server.R take in the lamba, smaple size and simulation number from the slider
-
-```r
-      lambda <- input$lambda
-      n  <- input$n
-      sim_num    <- input$sim_num
+The code in the server.R take in the lamba, smaple size and simulation number from the slider. Following is an example of exponential distribution with lambda=0.2, which has theoractical mean of 1/0.2= 5. We could see from the mean data the value is approaching 5 as the array index increase.
+```{r,echo=FALSE}
+      mns = NULL
+      mean=NULL
+      var=NULL
+      lambda <- 0.2
+      n  <- 40
+      sim_num    <- 100
       set.seed(1000)
        for (i in 1 : sim_num) {
          value=rexp(n,lambda)
@@ -34,17 +43,12 @@ following code in the server.R take in the lamba, smaple size and simulation num
          var= c(var,var(mns[1:i]))
        }
 ```
+```{r}
+head(mean,25)
+```
 
-The App
-========================================================
 
-!["app"](App.jpg) 
-You could change through three slider
-- the exponential distribution lambda  
-- the sample size   
-- the simulation numbers
 
-the result will automatically refresh on the three figures to the right.
 
 About
 ========================================================
@@ -53,4 +57,5 @@ This app was developed for coursera class "Developing Data Products".
 
 It is an extension of the first project of coursera class "Statistical Inteference"
 
-It is written in R and you could get the source files in https://github.com/superpapper/Developing-Data-Products
+It is written in R and you could get the source files in https://github.com/superpapper/Developing-Data-Products  
+The App is hosted in https://superpapper.shinyapps.io/Project/
